@@ -23,7 +23,7 @@ public:
 		for (size_t i = 0; i < MAX_SIZE; i++) {
 			data[i] = 0;
 		}
-	} // приравнять число 0
+	} 
 
 	BigInt(int Int) {
 		if (Int == 0) {
@@ -46,7 +46,7 @@ public:
 				data[i] = 0;
 			}
 		}
-	}// присвоить int
+	}// ГЇГ°ГЁГ±ГўГ®ГЁГІГј int
 
 	BigInt(const char* Str) {
 		size_t shift = 0;
@@ -65,7 +65,7 @@ public:
 		for (size_t i = 0; i < length - shift; i++) {
 			data[i / RANK] += (digit_type)(Str[length - 1 - i] - '0') * (digit_type)pow(10, i % RANK);
 		}
-	} // обратите внимание на отрицательные числа! Проверку на корректность делать не надо
+	} 
 
 	BigInt operator + (const BigInt& other) const {
 		if (this->is_negative == other.is_negative) {
@@ -257,23 +257,23 @@ public:
 
 	BigInt& operator ++ () {
 		return *this += 1;
-	} // Преинкремент. Пишется: ++a. По сути это += 1
+	}
 
 	BigInt operator ++ (int dummy) {
 		BigInt res = *this;
 		*this += 1;
 		return res;
-	}// Постинкремент. Пишется: a++. По сути это возвращение старого объекта и изменение текущего. (как с int). //Переменная dummy не используется и не передается. Так вышло по историческим причинам, чтобы отличать пре- от пост- инкремента.
+	}
 
 	BigInt& operator -- () {
 		return *this -= 1;
-	}// Предекремент. Пишется: --a. По сути это -= 1
+	}
 
 	BigInt operator -- (int dummy) {
 		BigInt res = *this;
 		*this -= 1;
 		return res;
-	} // Постдекремент.
+	}
 
 	BigInt operator - () const {
 		BigInt res = *this;
@@ -281,7 +281,7 @@ public:
 			res.is_negative = !res.is_negative;
 		}
 		return res;
-	}// унарный минус пишется: -a
+	}
 
 	bool operator < (const BigInt& other) const {
 		if (this->is_negative == other.is_negative) {
